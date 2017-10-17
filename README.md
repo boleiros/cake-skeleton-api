@@ -1,37 +1,40 @@
 # CakePHP Restfull API Skeleton
 
 Projeto criado para facilitar criação de API's com cakephp
+I've created this repo to make easy the creation of Api's with CakePHP
 
-## Instalação
+## Instalation
 
 1. git clone 
 2. composer install
 
-## O que muda?
+## What changes
+
+### Routes
+Customizable routes: By default, cake makes every function on a controller a route, that when called it returns a view.
+
+I've changed the way that router works, making easy to create custom routes, define the request type ( get, post) and witch controller/method this route will call.
 
 
-### Rotas
-Rotas personalisáveis: Por padrão, o cake considera todo método em um controller como uma rota, que ao chamada irá retornar uma view.
-Alterei a forma como o router do cake funciona, permitindo criar rotas personaliáveis e definir o request type, e qual controller/método essa rota irá chamar.
+In the file config/routes.php
 
-No arquivo config/routes.php
-Ex: 
+Example:
 
-Essa rota na raiz "/" irá retornar o método index do controler ApiController
+This route "/" will return the index method on ApiController
 ```$route->get('/','Api','index');```
    
-Essa rota "/user"  irá retornar o método getUsers do controler ApiController
+This route "/user" will return the getUsers method on ApiController
 ```$route->get('/user','Api','getUsers');```
 
 ### Responses
 
-No AppController foi criada uma função *response* que poderá chamada para retornar uma responsta rest (formato json)
+On AppController I've created a function called *response* that returns a response rest (json)
 
-Por padrão a resposta retorna com o status code 200, e com o tipo json, mas isso pode ser alterado via parametros na função
+By default the response returns with status code 200 with application/json, but this can be changed by parameters within the function
 
 ```
-/**
-     * retorna uma resposta
+    /**
+    * returns a response
      *
      * @param Array $body
      * @param integer $status

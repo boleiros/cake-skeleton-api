@@ -51,7 +51,7 @@ class AppController extends Controller
     }
 
     /**
-     * retorna uma resposta
+     * returns a response
      *
      * @param Array $body
      * @param integer $status
@@ -59,8 +59,7 @@ class AppController extends Controller
      * @return response
      */
     public function response($body, $status = 200, $type = 'application/json')
-    {
-        
+    {        
         $this->response->body(json_encode($body));
         $this->response->statusCode($status);
         $this->response->type($type);
