@@ -1,6 +1,5 @@
 # CakePHP Restfull API Skeleton
 
-Projeto criado para facilitar criação de API's com cakephp
 I've created this repo to make easy the creation of Api's with CakePHP
 
 ## Instalation
