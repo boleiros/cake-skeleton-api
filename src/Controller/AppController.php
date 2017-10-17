@@ -50,13 +50,21 @@ class AppController extends Controller
         //$this->loadComponent('Csrf');
     }
 
-    public function response($body)
+    /**
+     * retorna uma resposta
+     *
+     * @param Array $body
+     * @param integer $status
+     * @param string $type
+     * @return response
+     */
+    public function response($body, $status = 200, $type = 'application/json')
     {
-
-        // $this->autoRender = false;
+        
         $this->response->body(json_encode($body));
-        $this->response->statusCode(200);
-        $this->response->type('application/json');
+        $this->response->statusCode($status);
+        $this->response->type($type);
+
         return $this->response;
     }
 }
